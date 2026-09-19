@@ -1,8 +1,215 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!-- 
+  ======================================================================
+  YEAR 10 DIGITAL TECHNOLOGY - GITHUB PAGES TUTORIAL & TEMPLATE
+  ======================================================================
+  This is a single-file template containing HTML structure and CSS styles.
+  Open this file in a code editor to see how it works!
+-->
+<html lang="en">
 <head>
-<title>Example</title>
+    <meta charset="UTF-8">
+    <!-- Ensures the web page scales correctly on screens of all sizes (mobile, tablet, desktop) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Publish Your Website with GitHub Pages</title>
+
+    <!-- CSS STYLES (Kept inside a single file for easy uploading) -->
+    <style>
+        /* CSS Variables: Makes it easy to change colors across the whole page */
+        :root {
+            --primary-color: #24292e;   /* Dark GitHub Header Color */
+            --accent-color: #0969da;    /* Blue Accent Color */
+            --bg-color: #f6f8fa;        /* Light Grey Background */
+            --card-bg: #ffffff;        /* White Card Background */
+            --text-color: #1f2328;      /* Primary Text Color */
+            --border-color: #d0d7de;    /* Border Accent Color */
+            --code-bg: #eff1f3;         /* Code Highlight Background */
+        }
+
+        /* Base Page Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header / Banner Styling */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Main Container: Keeps content centered and readable */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Step Card Styling: Creates distinct boxes for each tutorial step */
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .step-card h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Circle Badge for Step Numbers */
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Code Styling: Used for showing file names and terminal/URL commands */
+        code {
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+            color: #0969da;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        pre code {
+            padding: 0;
+            background: transparent;
+            color: inherit;
+        }
+
+        /* Helpful Tip Callout Box */
+        .tip-box {
+            background-color: #ddf4ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 0.8rem 1rem;
+            margin-top: 1rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #57606a;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
-<p> Hello, World!</p>
+
+    <!-- SECTION: HEADER BANNER -->
+    <header>
+        <h1>Year 10 Digital Tech: Publishing on GitHub Pages</h1>
+        <p>Follow these steps to turn your HTML code into a live website on the Internet!</p>
+    </header>
+
+    <!-- SECTION: MAIN CONTENT AREA -->
+    <main>
+
+        <!-- STEP 1 -->
+        <section class="step-card">
+            <h2><span class="step-number">1</span> Create a New GitHub Repository</h2>
+            <p>Log in to <a href="https://github.com" target="_blank" rel="noopener">GitHub.com</a> and click the <strong>+</strong> icon in the top right, then select <strong>New repository</strong>.</p>
+            <ul>
+                <li><strong>Repository Name:</strong> Give it a short name (e.g., <code>my-first-website</code>).</li>
+                <li><strong>Visibility:</strong> Select <strong>Public</strong> (GitHub Pages requires public repositories on free student accounts).</li>
+                <li><strong>Initialize:</strong> Check the box that says <strong>Add a README file</strong>.</li>
+                <li>Click <strong>Create repository</strong>.</li>
+            </ul>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="step-card">
+            <h2><span class="step-number">2</span> Add Your <code>index.html</code> File</h2>
+            <p>The homepage of every web server must be named exactly <code>index.html</code> (all lowercase).</p>
+            <ul>
+                <li>In your new repository, click <strong>Add file</strong> &rarr; <strong>Create new file</strong> (or <em>Upload files</em> if you already wrote your code).</li>
+                <li>In the filename box, type <code>index.html</code>.</li>
+                <li>Paste your HTML code into the editor.</li>
+                <li>Scroll to the bottom and click <strong>Commit changes...</strong> to save your file.</li>
+            </ul>
+            <div class="tip-box">
+                💡 <strong>Pro Tip:</strong> Inspect the code of this page to see how HTML tags like <code>&lt;section&gt;</code>, <code>&lt;h2&gt;</code>, and <code>&lt;ul&gt;</code> structure the content!
+            </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="step-card">
+            <h2><span class="step-number">3</span> Enable GitHub Pages</h2>
+            <p>Now tell GitHub to publish your repository root folder as a live website:</p>
+            <ol>
+                <li>Click on the <strong>Settings</strong> tab at the top of your repository page.</li>
+                <li>In the left menu sidebar, click <strong>Pages</strong> (under "Code and automation").</li>
+                <li>Under <strong>Build and deployment &gt; Branch</strong>:
+                    <ul>
+                        <li>Select <code>main</code> (or <code>master</code>) as the branch.</li>
+                        <li>Keep the folder set to <code>/(root)</code>.</li>
+                    </ul>
+                </li>
+                <li>Click <strong>Save</strong>.</li>
+            </ol>
+        </section>
+
+        <!-- STEP 4 -->
+        <section class="step-card">
+            <h2><span class="step-number">4</span> View Your Live Website!</h2>
+            <p>Wait 1–2 minutes for GitHub to build your website, then refresh the <strong>Pages</strong> settings screen.</p>
+            <p>You will see a live web address banner formatted like this:</p>
+            <pre><code>https://&lt;your-username&gt;.github.io/&lt;repository-name&gt;/</code></pre>
+            <p>Click the link to test your live website on the internet!</p>
+        </section>
+
+    </main>
+
+    <!-- SECTION: FOOTER -->
+    <footer>
+        <p>Digital Technology Class Template • Published with GitHub Pages</p>
+    </footer>
+
+</body>
 </html>
